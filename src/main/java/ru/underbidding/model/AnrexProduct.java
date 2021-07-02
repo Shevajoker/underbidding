@@ -1,21 +1,11 @@
 package ru.underbidding.model;
 
 
-
-
-
-
-
-import java.util.ArrayList;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -39,9 +29,7 @@ public class AnrexProduct {
 	private int priceSale;
 	
 	private String url;
-	
-//	@OneToMany(mappedBy = "anrexProduct", fetch = FetchType.LAZY, orphanRemoval = true)
-//	private ArrayList<OtherProduct> otherProducts;
+
 
 	public int getId() {
 		return id;
@@ -87,13 +75,6 @@ public class AnrexProduct {
 		this.url = url;
 	}
 
-//	public ArrayList<OtherProduct> getOtherProducts() {
-//		return otherProducts;
-//	}
-//
-//	public void setOtherProducts(ArrayList<OtherProduct> list) {
-//		this.otherProducts = list;
-//	}
 
 	@Override
 	public String toString() {

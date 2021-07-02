@@ -1,27 +1,22 @@
 package ru.underbidding.servlets;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ru.underbidding.model.AnrexProduct;
-import ru.underbidding.service.AnrexProductService;
-
 /**
- * Servlet implementation class UnderbiddingServlet
+ * Servlet implementation class SmebelSuServlet
  */
-public class UnderbiddingServlet extends HttpServlet {
+public class SmebelSuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UnderbiddingServlet() {
+    public SmebelSuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,13 +27,13 @@ public class UnderbiddingServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		List<AnrexProduct> products = null;
-		AnrexProductService anrexProductService = new AnrexProductService();
-		products = anrexProductService.getAllAnrexProducts();
 		
+		String article = (String) request.getParameter("anrex-product");
+		System.out.println(article);
 		HttpSession session = request.getSession();
-		session.setAttribute("products", products);
+		session.setAttribute("smebelAartNum", article);
 		getServletContext().getRequestDispatcher("/admin.jsp").forward(request, response);
+		
 	}
 
 }

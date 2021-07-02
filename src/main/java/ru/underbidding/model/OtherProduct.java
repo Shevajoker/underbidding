@@ -1,13 +1,11 @@
 package ru.underbidding.model;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,13 +25,9 @@ public class OtherProduct {
 	private int priceSale;
 	private String url;
 	@Column(name = "anrex_article")
-	private String anrexAricle; 
+	private String anrexArticle; 
 	
 	
-//	@ManyToOne(optional = false, cascade = CascadeType.ALL)
-//	@JoinColumn(name = "anrex_article", nullable = false)
-//	private AnrexProduct anrexProduct;
-
 	public int getId() {
 		return id;
 	}
@@ -85,11 +79,11 @@ public class OtherProduct {
 	}
 
 	public String getAnrexAricle() {
-		return anrexAricle;
+		return anrexArticle;
 	}
 
 	public void setAnrexAricle(String anrexAricle) {
-		this.anrexAricle = anrexAricle;
+		this.anrexArticle = anrexAricle;
 	}
 
 //	public AnrexProduct getAnrexProduct() {

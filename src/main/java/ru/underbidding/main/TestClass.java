@@ -21,44 +21,70 @@ public class TestClass {
 	
 	public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 		
-		String article;
-		String name;
-		int priceActual;
-		int priceSale;
-		String url = "https://anrex.info/catalog/gostinye/polki_nastennye/18447/";
 		
 		
-		Document doc = Jsoup.connect(url)
-				.userAgent("Chrome/4.0.249.0 Safari/532.5")
-				.referrer("https://smebel.su")
-				.get();
+		AnrexProductService anrexProductService = new AnrexProductService();
+		AnrexProduct anrexProduct = anrexProductService.getAnrexProductByArticle("rrr");
 		
-		Elements data = doc.select(".article").select(".value");
-		article = data.get(0).text();
-		
-		data = doc.select("#pagetitle");
-		name = data.get(0).text();
-		
-		data = doc.select(".price_value");
-		String st = data.get(0).text().replaceAll("\\s+","");
-		priceActual = Integer.parseInt(st);
+		System.out.println(anrexProduct.toString());
 		
 		
 		
-		try {
 		
-			data = doc.select(".right_info").select(".discount").select(".price_value");
-			st = data.get(0).text().replaceAll("\\s+","");
-			priceSale = Integer.parseInt(st);
-			
-//			System.out.println(data.get(0).text());
-			
-	
-		} catch (IndexOutOfBoundsException e) {
-			System.out.println("No Sale!");
-			System.out.print(e.getMessage());
-			priceSale = 0;
-		} 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		String article;
+//		String name;
+//		int priceActual;
+//		int priceSale;
+//		String url = "https://anrex.info/catalog/gostinye/polki_nastennye/18447/";
+//		
+//		
+//		Document doc = Jsoup.connect(url)
+//				.userAgent("Chrome/4.0.249.0 Safari/532.5")
+//				.referrer("https://smebel.su")
+//				.get();
+//		
+//		Elements data = doc.select(".article").select(".value");
+//		article = data.get(0).text();
+//		
+//		data = doc.select("#pagetitle");
+//		name = data.get(0).text();
+//		
+//		data = doc.select(".price_value");
+//		String st = data.get(0).text().replaceAll("\\s+","");
+//		priceActual = Integer.parseInt(st);
+//		
+//		
+//		
+//		try {
+//		
+//			data = doc.select(".right_info").select(".discount").select(".price_value");
+//			st = data.get(0).text().replaceAll("\\s+","");
+//			priceSale = Integer.parseInt(st);
+//			
+////			System.out.println(data.get(0).text());
+//			
+//	
+//		} catch (IndexOutOfBoundsException e) {
+//			System.out.println("No Sale!");
+//			System.out.print(e.getMessage());
+//			priceSale = 0;
+//		} 
 		
 //		AnrexProduct anrexProduct = new AnrexProduct();
 //		anrexProduct.setArticle(article);
@@ -76,9 +102,9 @@ public class TestClass {
 		
 		
 		
-		AnrexInfo anrexInfo = new AnrexInfo();
-		anrexInfo.saveAnrexInfoProduct("https://anrex.info/catalog/gostinye/zhurnalnye_stoly/18550/");
-		
+//		AnrexInfo anrexInfo = new AnrexInfo();
+//		anrexInfo.saveAnrexInfoProduct("https://anrex.info/catalog/gostinye/zhurnalnye_stoly/18550/");
+//		
 		
 		
 		

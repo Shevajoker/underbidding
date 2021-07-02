@@ -29,4 +29,14 @@
     <servlet-name>AddArticleAnrexInfo</servlet-name>
     <url-pattern>/addArticleAnrexInfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SmebelSuServlet</display-name>
+    <servlet-name>SmebelSuServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.SmebelSuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SmebelSuServlet</servlet-name>
+    <url-pattern>/SmebelSu</url-pattern>
+  </servlet-mapping>
 </web-app>
