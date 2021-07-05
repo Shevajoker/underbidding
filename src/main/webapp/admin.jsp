@@ -18,7 +18,7 @@
 <form action="addArticleAnrexInfo" method="post">
 <label>Add product from anrex.info</label>
 <br>
-<input type="text" placeholder="Enter URL" name="urlAnrexInfo" size="100">
+<input type="text" placeholder="Enter URL" name="urlAnrexInfo" size="100" required="required">
 <br>
 <input type="submit">
 </form>
@@ -38,7 +38,7 @@
 <br>
 <label>Add product from smebel.su</label>
 <br>
-<input type="text" placeholder="Enter URL" name="urlSmebelSu" size="100">
+<input type="text" placeholder="Enter URL" name="urlSmebelSu" size="100" required="required">
 <br>
 <input type="submit">
 </form>

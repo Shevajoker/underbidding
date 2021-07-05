@@ -1,11 +1,17 @@
 package ru.underbidding.servlets;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import ru.underbidding.main.SmebelSu;
+import ru.underbidding.model.AnrexProduct;
+import ru.underbidding.service.AnrexProductService;
 
 /**
  * Servlet implementation class SmebelSuServlet
@@ -27,11 +33,19 @@ public class SmebelSuServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		
+		List<AnrexProduct> products = null;
+		AnrexProductService anrexProductService = new AnrexProductService();
+		products = anrexProductService.getAllAnrexProducts();
 		String article = (String) request.getParameter("anrex-product");
-		System.out.println(article);
+		String url = (String) request.getParameter("urlSmebelSu");
+		
+		SmebelSu smebelSu = new SmebelSu();
+		smebelSu.saveSmebelProduct(url, article);
+		
 		HttpSession session = request.getSession();
+		
 		session.setAttribute("smebelAartNum", article);
+		session.setAttribute("products", products);
 		getServletContext().getRequestDispatcher("/admin.jsp").forward(request, response);
 		
 	}

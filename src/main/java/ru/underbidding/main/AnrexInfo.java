@@ -30,10 +30,12 @@ public class AnrexInfo {
 		String article;
 		String name;
 		int priceActual;
-		int priceSale;
+		int priceOld;
 		String url = anrexProduct.getUrl();
 
-		Document doc = Jsoup.connect(url).userAgent("Chrome/4.0.249.0 Safari/532.5").referrer("https://smebel.su")
+		Document doc = Jsoup.connect(url)
+				.userAgent("Chrome/4.0.249.0 Safari/532.5")
+				.referrer("https://anrex.info")
 				.get();
 
 		Elements data = doc.select(".article").select(".value");
@@ -49,17 +51,17 @@ public class AnrexInfo {
 
 			data = doc.select(".right_info").select(".discount").select(".price_value");
 			st = data.get(0).text().replaceAll("\\s+", "");
-			priceSale = Integer.parseInt(st);
+			priceOld = Integer.parseInt(st);
 
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("No Sale!");
 			System.out.print(e.getMessage());
-			priceSale = 0;
+			priceOld = 0;
 		}
 		anrexProduct.setArticle(article);
 		anrexProduct.setName(name);
 		anrexProduct.setPriceActual(priceActual);
-		anrexProduct.setPriceSale(priceSale);
+		anrexProduct.setpriceOld(priceOld);
 		return anrexProduct;
 	}
 

@@ -21,16 +21,20 @@ public class OtherProduct {
 	@Column(name = "price_actual")
 	private int priceActual;
 	
-	@Column(name = "price_sale")
-	private int priceSale;
+	@Column(name = "price_old")
+	private int priceOld;
 	private String url;
 	@Column(name = "anrex_article")
 	private String anrexArticle; 
 	
-	
+	@Column(name="site_name")
+	private String sateName;
+
 	public int getId() {
 		return id;
 	}
+
+	
 
 	public String getName() {
 		return name;
@@ -56,12 +60,12 @@ public class OtherProduct {
 		this.priceActual = priceActual;
 	}
 
-	public int getPriceSale() {
-		return priceSale;
+	public int getPriceOld() {
+		return priceOld;
 	}
 
-	public void setPriceSale(int priceSale) {
-		this.priceSale = priceSale;
+	public void setPriceOld(int priceOld) {
+		this.priceOld = priceOld;
 	}
 
 	public String getUrl() {
@@ -72,28 +76,31 @@ public class OtherProduct {
 		this.url = url;
 	}
 
-	@Override
-	public String toString() {
-		return "OtherProduct [id=" + id + ", name=" + name + ", article=" + article + ", priceActual=" + priceActual
-				+ ", priceSale=" + priceSale + ", url=" + url + "]";
-	}
-
-	public String getAnrexAricle() {
+	public String getAnrexArticle() {
 		return anrexArticle;
 	}
 
-	public void setAnrexAricle(String anrexAricle) {
-		this.anrexArticle = anrexAricle;
+	public void setAnrexArticle(String anrexArticle) {
+		this.anrexArticle = anrexArticle;
 	}
 
-//	public AnrexProduct getAnrexProduct() {
-//		return anrexProduct;
-//	}
-//
-//	public void setAnrexProduct(AnrexProduct anrexProduct) {
-//		this.anrexProduct = anrexProduct;
-//	}
+	public String getSateName() {
+		return sateName;
+	}
 
+	public void setSateName(String sateName) {
+		this.sateName = sateName;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "OtherProduct [id=" + id + ", name=" + name + ", article=" + article + ", priceActual=" + priceActual
+				+ ", priceOld=" + priceOld + ", url=" + url + ", anrexArticle=" + anrexArticle + ", sateName="
+				+ sateName + "]";
+	} 
+	
 	
 
 	

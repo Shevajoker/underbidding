@@ -12,4 +12,13 @@ public class OtherProductService {
 		otherProductService.saveOtherProbuct(product);
 	}
 	
+	public boolean checkAnrexProductExist(OtherProduct product) {
+		return otherProductService.checkOtherProductExist(product);
+		
+	}
+	
+	public void updateOtherProduct(OtherProduct product) {
+		otherProductService.updateOtherProduct(product);
+	}
+	
 }

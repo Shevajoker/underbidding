@@ -22,22 +22,61 @@ public class TestClass {
 	public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 		
 		
-		
-		AnrexProductService anrexProductService = new AnrexProductService();
-		AnrexProduct anrexProduct = anrexProductService.getAnrexProductByArticle("rrr");
-		
-		System.out.println(anrexProduct.toString());
+		SmebelSu smebelSu = new SmebelSu();
+		smebelSu.saveSmebelProduct("https://smebel.su/gostinaya/zhurnalnyj-stolik/stol-zhurnalnyj-ehvora", "11111");
 		
 		
-		
-		
-		
-		
+//		AnrexProductService anrexProductService = new AnrexProductService();
+//		AnrexProduct anrexProduct = anrexProductService.getAnrexProductByArticle("rrr");
+//		
+//		System.out.println(anrexProduct.toString());
+//		
 		
 		
 		
 		
-		
+//		String article;
+//		String name;
+//		int priceActual;
+//		int priceOld;
+//		
+//		String url = "https://smebel.su/gostinaya/zhurnalnyj-stolik/stol-zhurnalnyj-ehvora";
+//		
+//
+//		Document doc = Jsoup.connect(url)
+//				.userAgent("Chrome/4.0.249.0 Safari/532.5")
+//				.referrer("https://smebel.su")
+//				.get();
+//
+//		Elements data = doc.select(".product-model");
+//		article = data.get(0).text();
+//
+//		data = doc.select(".product-title");
+//		name = data.get(0).text();
+//
+//		data = doc.select(".formated_price");
+//		String st = data.get(0).text().replaceAll("\\s+", "");
+//		st = st.substring(0, st.length()-4);
+//		
+//				
+//		priceActual = Integer.parseInt(st);
+//		
+//		try {
+//
+//			data = doc.select(".p-price-block").select(".price-old");
+//			st = data.get(0).text().replaceAll("\\s+", "");
+//			priceOld = Integer.parseInt(st);
+//
+//		} catch (IndexOutOfBoundsException e) {
+//			System.out.println("No Sale!");
+//			System.out.print(e.getMessage());
+//			priceOld = 0;
+//		}
+//		
+//		System.out.println(priceOld + "- old");
+//		System.out.println(priceActual + "- act");
+//		
+//		
 		
 		
 		

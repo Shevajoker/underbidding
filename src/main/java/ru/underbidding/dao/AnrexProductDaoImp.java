@@ -105,7 +105,7 @@ public class AnrexProductDaoImp implements AnrexProductDAO<AnrexProduct>{
 		Transaction transaction = null;
 		try {
 			transaction = session.getTransaction();
-			list = session.createQuery("From AnrexProduct").list();
+			list = session.createQuery("From AnrexProduct ORDER BY name").list();
 			transaction.commit();
 		} catch (Exception e) {
 			if (transaction != null) {

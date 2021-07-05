@@ -25,8 +25,8 @@ public class AnrexProduct {
 	@Column(name = "price_actual")
 	private int priceActual;
 	
-	@Column(name = "price_sale")
-	private int priceSale;
+	@Column(name = "price_old")
+	private int priceOld;
 	
 	private String url;
 
@@ -60,11 +60,11 @@ public class AnrexProduct {
 	}
 
 	public int getPriceSale() {
-		return priceSale;
+		return priceOld;
 	}
 
-	public void setPriceSale(int priceSale) {
-		this.priceSale = priceSale;
+	public void setpriceOld(int priceOld) {
+		this.priceOld = priceOld;
 	}
 
 	public String getUrl() {
@@ -79,7 +79,7 @@ public class AnrexProduct {
 	@Override
 	public String toString() {
 		return "AnrexProduct [id=" + id + ", name=" + name + ", article=" + article + ", priceActual=" + priceActual
-				+ ", priceSale=" + priceSale + ", url=" + url + "]";
+				+ ", priceSale=" + priceOld + ", url=" + url + "]";
 	}
 
 	
