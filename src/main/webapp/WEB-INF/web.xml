@@ -39,4 +39,14 @@
     <servlet-name>SmebelSuServlet</servlet-name>
     <url-pattern>/SmebelSu</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InformationServlet</display-name>
+    <servlet-name>InformationServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.InformationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InformationServlet</servlet-name>
+    <url-pattern>/information</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -11,4 +11,5 @@ public interface OtherProductDAO <Entity>{
 	public Entity getOtherProductByAnrexArticle(String anrexArticle);
 	public boolean checkOtherProductExist (Entity product);
 	public List<Entity> getAllOtherProducts();
+	public List<Entity> getOtherProductsBySiteName(String siteName);
 }

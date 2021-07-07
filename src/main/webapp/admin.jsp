@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -13,7 +16,9 @@
 
 <h1>Hi Admin!</h1>
 
-<br> <br>
+<br>
+<a href="http://localhost:8080/ru.underbidding/">Back</a>
+<br>
 <hr>
 <form action="addArticleAnrexInfo" method="post">
 <label>Add product from anrex.info</label>

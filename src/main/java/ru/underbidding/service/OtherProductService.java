@@ -1,5 +1,7 @@
 package ru.underbidding.service;
 
+import java.util.List;
+
 import ru.underbidding.dao.OtherProductDaoImp;
 import ru.underbidding.model.OtherProduct;
 
@@ -19,6 +21,14 @@ public class OtherProductService {
 	
 	public void updateOtherProduct(OtherProduct product) {
 		otherProductService.updateOtherProduct(product);
+	}
+
+	public OtherProduct getOtherProductByAnrexArticle(String anrexArticle) {
+		return otherProductService.getOtherProductByAnrexArticle(anrexArticle);
+	}
+	
+	public List<OtherProduct> getOtherProductsBySiteName(String siteName){
+		return otherProductService.getOtherProductsBySiteName(siteName);
 	}
 	
 }

@@ -59,7 +59,7 @@ public class AnrexProduct {
 		this.priceActual = priceActual;
 	}
 
-	public int getPriceSale() {
+	public int getPriceOld() {
 		return priceOld;
 	}
 
