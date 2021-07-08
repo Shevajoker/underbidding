@@ -104,7 +104,7 @@ public class AnrexProductDaoImp implements AnrexProductDAO<AnrexProduct>{
 		Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {
-			transaction = session.getTransaction();
+			transaction = session.beginTransaction();
 			list = session.createQuery("From AnrexProduct ORDER BY name").list();
 			transaction.commit();
 		} catch (Exception e) {

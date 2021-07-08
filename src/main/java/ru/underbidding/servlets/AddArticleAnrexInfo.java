@@ -35,6 +35,7 @@ public class AddArticleAnrexInfo extends HttpServlet {
 		anrexInfo.saveAnrexInfoProduct(url);
 		
 		request.setAttribute("urlAnrexInfo", "");
+		request.setAttribute("message", "Success");
 		getServletContext().getRequestDispatcher("/admin.jsp").forward(request, response);
 		
 	}

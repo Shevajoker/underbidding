@@ -16,6 +16,7 @@ public class OtherProductDaoImp implements OtherProductDAO<OtherProduct> {
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
+			System.out.println(product);
 			session.save(product);
 			transaction.commit();
 		} catch (Exception e) {
@@ -41,7 +42,7 @@ public class OtherProductDaoImp implements OtherProductDAO<OtherProduct> {
 			if (transaction != null) {
 				transaction.rollback();
 			}
-			System.out.println("EXCEPTION !---- Other Product save error ----!");
+			System.out.println("EXCEPTION !---- Other Product updateOtherProduct error ----!");
 			System.out.println(e.getMessage());
 		} finally {
 			session.close();
@@ -101,6 +102,7 @@ public class OtherProductDaoImp implements OtherProductDAO<OtherProduct> {
 		OtherProductService otherProductService = new OtherProductService();
 		OtherProduct otherProduct = new OtherProduct();
 		otherProduct = otherProductService.getOtherProductByAnrexArticle(product.getAnrexArticle());
+		
 		if (otherProduct.getAnrexArticle() != null) {
 			return true;
 		} else {

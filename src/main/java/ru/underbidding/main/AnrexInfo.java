@@ -65,4 +65,14 @@ public class AnrexInfo {
 		return anrexProduct;
 	}
 
+	
+	public void updateAnrexProduct(AnrexProduct product) throws IOException {
+		AnrexInfo anrexInfo = new AnrexInfo();
+		AnrexProductService anrexProductService = new AnrexProductService();
+		
+		product = anrexInfo.parseAnrexInfoPage(product);
+		anrexProductService.updateAnrexProduct(product);
+		
+	}
+	
 }

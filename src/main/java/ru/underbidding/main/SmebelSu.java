@@ -18,12 +18,16 @@ public class SmebelSu {
 		SmebelSu smebelSu = new SmebelSu();
 		otherProduct.setUrl(url);
 		otherProduct.setAnrexArticle(anrexArticle);
-		otherProduct = smebelSu.parseSmebelSuPage(otherProduct);
+		
 		OtherProductService otherProductService = new OtherProductService();
 		
 		if (otherProductService.checkAnrexProductExist(otherProduct)) {
+			otherProduct = otherProductService.getOtherProductByAnrexArticle(anrexArticle);
+			otherProduct.setUrl(url);
+			otherProduct = smebelSu.parseSmebelSuPage(otherProduct);
 			otherProductService.updateOtherProduct(otherProduct);
 		} else {
+			otherProduct = smebelSu.parseSmebelSuPage(otherProduct);
 			otherProductService.saveOtherProduct(otherProduct);
 		}
 		
@@ -74,4 +78,15 @@ public class SmebelSu {
 		return otherProduct;
 		
 	}
+	
+	public void updateSmebelSuProduct(OtherProduct product) throws IOException {
+		SmebelSu smebelSu = new SmebelSu();
+		OtherProductService otherProductService = new OtherProductService();
+		
+		product = smebelSu.parseSmebelSuPage(product);
+		otherProductService.updateOtherProduct(product);
+		
+	}
+	
+	
 }
