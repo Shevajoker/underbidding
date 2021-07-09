@@ -46,6 +46,8 @@ public class UpdateAllDataJob implements Job{
 			}
 		}
 		
+		System.out.println("UpdateAllDataJob");
+		
 	}
 
 }

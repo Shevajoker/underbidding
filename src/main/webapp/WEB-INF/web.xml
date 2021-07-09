@@ -49,4 +49,17 @@
     <servlet-name>InformationServlet</servlet-name>
     <url-pattern>/information</url-pattern>
   </servlet-mapping>
+  <listener>
+    <listener-class>org.quartz.ee.servlet.QuartzInitializerListener</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>EkatMebelRuServlet</display-name>
+    <servlet-name>EkatMebelRuServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.EkatMebelRuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EkatMebelRuServlet</servlet-name>
+    <url-pattern>/EkatMebelRu</url-pattern>
+  </servlet-mapping>
 </web-app>

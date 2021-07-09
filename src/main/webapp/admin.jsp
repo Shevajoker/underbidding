@@ -26,7 +26,7 @@
 				type="text" placeholder="Enter URL" name="urlAnrexInfo" size="100"
 				required="required"> <br> <input type="submit">
 		</form>
-		<p style="color: green;">${message }</p> 
+		<p style="color: green;">${message }</p>
 		<br>
 		<hr>
 
@@ -42,8 +42,23 @@
 				type="text" placeholder="Enter URL" name="urlSmebelSu" size="100"
 				required="required"> <br> <input type="submit">
 		</form>
-
-		${smebelAartNum}
+		
+		
+		<hr>
+		
+		<br>
+		<h2>ekat-mebel.ru</h2>
+		<form id="form-ekat-mebel-ru" action="EkatMebelRu" method="post">
+			<label>Product from anrex.info</label> <br> <select
+				form="form-ekat-mebel-ru" name="anrex-product">
+				<c:forEach items="${products}" var="product">
+					<option value="${product.article }">${product.name}</option>
+				</c:forEach>
+			</select> <br> <label>Add product from ekat-mebel.ru</label> <br> <input
+				type="text" placeholder="Enter URL" name="ekatMebelRuUrl" size="100"
+				required="required"> <br> <input type="submit">
+		</form>
+		
 
 	</div>
 </body>

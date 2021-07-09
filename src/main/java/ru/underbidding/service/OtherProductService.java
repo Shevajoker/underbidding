@@ -23,8 +23,8 @@ public class OtherProductService {
 		otherProductService.updateOtherProduct(product);
 	}
 
-	public OtherProduct getOtherProductByAnrexArticle(String anrexArticle) {
-		return otherProductService.getOtherProductByAnrexArticle(anrexArticle);
+	public OtherProduct getOtherProductByAnrexArticle(String anrexArticle, String siteName) {
+		return otherProductService.getOtherProductByAnrexArticle(anrexArticle, siteName);
 	}
 	
 	public List<OtherProduct> getOtherProductsBySiteName(String siteName){

@@ -21,8 +21,8 @@
 	<a href="http://localhost:8080/ru.underbidding/">Back</a>
 	<br>
 	<hr>
-	<a href="information?date=smebel.su"> smebel.su </a>
-
+	<a href="information?date=smebel.su" class="btn btn-success"> smebel.su </a>
+	<a href="information?date=ekat-mebel.ru" class="btn btn-success"> ekat-mebel.ru </a>
 
 	<br style="background: red">
 	<hr>

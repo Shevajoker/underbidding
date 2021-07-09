@@ -22,7 +22,7 @@ public class SmebelSu {
 		OtherProductService otherProductService = new OtherProductService();
 		
 		if (otherProductService.checkAnrexProductExist(otherProduct)) {
-			otherProduct = otherProductService.getOtherProductByAnrexArticle(anrexArticle);
+			otherProduct = otherProductService.getOtherProductByAnrexArticle(anrexArticle, "smebel.su");
 			otherProduct.setUrl(url);
 			otherProduct = smebelSu.parseSmebelSuPage(otherProduct);
 			otherProductService.updateOtherProduct(otherProduct);

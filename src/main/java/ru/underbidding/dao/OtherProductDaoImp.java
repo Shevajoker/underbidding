@@ -74,7 +74,7 @@ public class OtherProductDaoImp implements OtherProductDAO<OtherProduct> {
 
 	}
 
-	public OtherProduct getOtherProductByAnrexArticle(String anrexArticle) {
+	public OtherProduct getOtherProductByAnrexArticle(String anrexArticle, String siteName) {
 		Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		List<OtherProduct> list = null;
@@ -82,7 +82,7 @@ public class OtherProductDaoImp implements OtherProductDAO<OtherProduct> {
 		try {
 			transaction = session.beginTransaction();
 			anrexArticle = anrexArticle.trim();
-			list = session.createQuery("FROM OtherProduct WHERE anrex_article = '" + anrexArticle + "'").list();
+			list = session.createQuery("FROM OtherProduct WHERE anrex_article = '" + anrexArticle + "' and site_name = '" + siteName + "'").list();
 			otherProduct = list.get(0);
 			transaction.commit();
 		} catch (Exception e) {
@@ -101,7 +101,7 @@ public class OtherProductDaoImp implements OtherProductDAO<OtherProduct> {
 	public boolean checkOtherProductExist(OtherProduct product) {
 		OtherProductService otherProductService = new OtherProductService();
 		OtherProduct otherProduct = new OtherProduct();
-		otherProduct = otherProductService.getOtherProductByAnrexArticle(product.getAnrexArticle());
+		otherProduct = otherProductService.getOtherProductByAnrexArticle(product.getAnrexArticle(), product.getSateName());
 		
 		if (otherProduct.getAnrexArticle() != null) {
 			return true;

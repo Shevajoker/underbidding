@@ -9,20 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ru.underbidding.main.SmebelSu;
+import ru.underbidding.main.EkatMebelRu;
 import ru.underbidding.model.AnrexProduct;
 import ru.underbidding.service.AnrexProductService;
 
 /**
- * Servlet implementation class SmebelSuServlet
+ * Servlet implementation class EkatMebelRuServlet
  */
-public class SmebelSuServlet extends HttpServlet {
+public class EkatMebelRuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SmebelSuServlet() {
+    public EkatMebelRuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,17 +37,16 @@ public class SmebelSuServlet extends HttpServlet {
 		AnrexProductService anrexProductService = new AnrexProductService();
 		products = anrexProductService.getAllAnrexProducts();
 		String article = (String) request.getParameter("anrex-product");
-		String url = (String) request.getParameter("urlSmebelSu");
+		String url = (String) request.getParameter("ekatMebelRuUrl");
 		
-		SmebelSu smebelSu = new SmebelSu();
-		smebelSu.saveSmebelProduct(url, article);
+		EkatMebelRu ekatMebelRu = new EkatMebelRu();
+		ekatMebelRu.saveProduct(url, article);
 		
 		HttpSession session = request.getSession();
 		
 		session.setAttribute("AartNum", article);
 		session.setAttribute("products", products);
 		getServletContext().getRequestDispatcher("/admin.jsp").forward(request, response);
-		
 	}
 
 }

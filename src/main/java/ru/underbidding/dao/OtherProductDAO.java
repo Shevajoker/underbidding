@@ -8,7 +8,7 @@ public interface OtherProductDAO <Entity>{
 	public Entity getOtherProductById(int id);
 	public void deleteOtherProduct(Entity product);
 	
-	public Entity getOtherProductByAnrexArticle(String anrexArticle);
+	public Entity getOtherProductByAnrexArticle(String anrexArticle, String siteName);
 	public boolean checkOtherProductExist (Entity product);
 	public List<Entity> getAllOtherProducts();
 	public List<Entity> getOtherProductsBySiteName(String siteName);
