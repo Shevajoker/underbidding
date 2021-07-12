@@ -22,9 +22,11 @@
 		<hr>
 
 		<form action="addArticleAnrexInfo" method="post">
-			<label>Add product from anrex.info</label> <br> <input
-				type="text" placeholder="Enter URL" name="urlAnrexInfo" size="100"
-				required="required"> <br> <input type="submit">
+			<label class="form-label">Add product from anrex.info</label>
+			<br>
+			<input type="text" placeholder="Enter URL" name="urlAnrexInfo" size="100" required="required" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-success">
 		</form>
 		<p style="color: green;">${message }</p>
 		<br>
@@ -33,14 +35,16 @@
 		<br>
 		<h2>smebel.su</h2>
 		<form id="form-smebel" action="SmebelSu" method="post">
-			<label>Product from anrex.info</label> <br> <select
-				form="form-smebel" name="anrex-product">
+			<label class="form-label">Product from anrex.info</label>
+			<br>
+			<select	form="form-smebel" name="anrex-product" class="form-control">
 				<c:forEach items="${products}" var="product">
 					<option value="${product.article }">${product.name}</option>
 				</c:forEach>
-			</select> <br> <label>Add product from smebel.su</label> <br> <input
-				type="text" placeholder="Enter URL" name="urlSmebelSu" size="100"
-				required="required"> <br> <input type="submit">
+			</select> <br> <label class="form-label">Add product from smebel.su</label> <br>
+			<input type="text" placeholder="Enter URL" name="urlSmebelSu" size="100" required="required" class="form-control">
+			<br>
+			<input type="submit" class="btn btn-success">
 		</form>
 		
 		
@@ -49,17 +53,28 @@
 		<br>
 		<h2>ekat-mebel.ru</h2>
 		<form id="form-ekat-mebel-ru" action="EkatMebelRu" method="post">
-			<label>Product from anrex.info</label> <br> <select
-				form="form-ekat-mebel-ru" name="anrex-product">
+			<label class="form-label">Product from anrex.info</label>
+			<br>
+			<select	form="form-ekat-mebel-ru" name="anrex-product" class="form-control">
 				<c:forEach items="${products}" var="product">
 					<option value="${product.article }">${product.name}</option>
 				</c:forEach>
-			</select> <br> <label>Add product from ekat-mebel.ru</label> <br> <input
-				type="text" placeholder="Enter URL" name="ekatMebelRuUrl" size="100"
-				required="required"> <br> <input type="submit">
+			</select>
+			<br>
+			<label class="form-label">Add product from ekat-mebel.ru</label>
+			<br>
+			<input type="text" placeholder="Enter URL" name="ekatMebelRuUrl" size="100"	required="required" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-success">
 		</form>
 		
 
 	</div>
+	
+	
+	<div class="container footer" style="height: 300px">
+	
+	</div>
+	
 </body>
 </html>

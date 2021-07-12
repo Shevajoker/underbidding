@@ -17,11 +17,12 @@ public class EkatMebelRu implements ParserPage {
 		EkatMebelRu ekatMebelRu = new EkatMebelRu();
 		otherProduct.setUrl(url);
 		otherProduct.setAnrexArticle(anrexArticle);
+		otherProduct.setSateName("ekat-mebel.ru");
 
 		OtherProductService otherProductService = new OtherProductService();
 
 		if (otherProductService.checkAnrexProductExist(otherProduct)) {
-			otherProduct = otherProductService.getOtherProductByAnrexArticle(anrexArticle, "ekat-mebel.ru");
+			otherProduct = otherProductService.getOtherProductByAnrexArticle(anrexArticle, otherProduct.getSateName());
 			otherProduct.setUrl(url);
 			otherProduct = ekatMebelRu.parseSitePage(otherProduct);
 			otherProductService.updateOtherProduct(otherProduct);

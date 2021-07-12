@@ -18,11 +18,12 @@ public class SmebelSu {
 		SmebelSu smebelSu = new SmebelSu();
 		otherProduct.setUrl(url);
 		otherProduct.setAnrexArticle(anrexArticle);
+		otherProduct.setSateName("smebel.su");
 		
 		OtherProductService otherProductService = new OtherProductService();
 		
 		if (otherProductService.checkAnrexProductExist(otherProduct)) {
-			otherProduct = otherProductService.getOtherProductByAnrexArticle(anrexArticle, "smebel.su");
+			otherProduct = otherProductService.getOtherProductByAnrexArticle(anrexArticle, otherProduct.getSateName());
 			otherProduct.setUrl(url);
 			otherProduct = smebelSu.parseSmebelSuPage(otherProduct);
 			otherProductService.updateOtherProduct(otherProduct);
