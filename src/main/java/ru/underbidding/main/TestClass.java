@@ -28,7 +28,7 @@ public class TestClass {
 		int priceActual;
 		int priceOld;
 		
-		String url = "https://ekat-mebel.ru/catalog.php?mid=24306";
+		String url = "http://mebelliner.ru/internet-magazin-brw/product/tiffani-polka-b-oreh-eliya-temnyj";
 		
 
 		Document doc = Jsoup.connect(url)
@@ -37,8 +37,8 @@ public class TestClass {
 				.get();
 
 		Elements data = doc.select("h1");
-		article = data.get(0).text();
-		System.out.println(data.get(0).text());
+		article = "111";
+//		System.out.println(data.get(0).text());
 		
 		
 		data = doc.select("h1");
@@ -48,18 +48,20 @@ public class TestClass {
 		
 		
 		
-		data = doc.select("strong");
-		String st = data.get(3).text();
+		data = doc.select(".card-price-current");
+		String st = data.get(0).text();
 //		.replaceAll("\\s+", "");
-		st = st.substring(0, st.length()-4).trim();
+		st = st.substring(0, st.length()-8).trim();
 		priceActual = Integer.parseInt(st);
 		System.out.println(priceActual);
 
 //		
 		try {
 
-			data = doc.select(".p-price-block").select(".price-old");
-			st = data.get(0).text().replaceAll("\\s+", "");
+			data = doc.select(".card-price-old");
+//			st = data.get(0).text().replaceAll("\\s+", "");
+			st = data.get(0).text();
+			st = st.substring(0, st.length()-8).trim();
 			priceOld = Integer.parseInt(st);
 
 		} catch (IndexOutOfBoundsException e) {

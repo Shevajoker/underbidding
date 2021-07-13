@@ -91,6 +91,7 @@ public class OtherProductDaoImp implements OtherProductDAO<OtherProduct> {
 			}
 			System.out.println("EXCEPTION !---- Other Product getOtherProductByAnrexArticle error ----!");
 			System.out.println(e.getMessage());
+//			otherProduct = null;
 		} finally {
 			session.close();
 		}

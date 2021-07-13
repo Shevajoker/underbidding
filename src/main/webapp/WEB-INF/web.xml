@@ -62,4 +62,14 @@
     <servlet-name>EkatMebelRuServlet</servlet-name>
     <url-pattern>/EkatMebelRu</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MebellinerRuServlet</display-name>
+    <servlet-name>MebellinerRuServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.MebellinerRuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MebellinerRuServlet</servlet-name>
+    <url-pattern>/MebellinerRu</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -23,6 +23,7 @@
 	<hr>
 	<a href="information?date=smebel.su" class="btn btn-success"> smebel.su </a>
 	<a href="information?date=ekat-mebel.ru" class="btn btn-success"> ekat-mebel.ru </a>
+	<a href="information?date=mebelliner.ru" class="btn btn-success"> mebelliner.ru </a>
 
 	<br style="background: red">
 	<hr>
