@@ -9,19 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ru.underbidding.main.BelsosnaRu;
 import ru.underbidding.model.AnrexProduct;
 import ru.underbidding.service.AnrexProductService;
 
 /**
- * Servlet implementation class UnderbiddingServlet
+ * Servlet implementation class BelsosnaRuServlet
  */
-public class UnderbiddingServlet extends HttpServlet {
+public class BelsosnaRuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UnderbiddingServlet() {
+    public BelsosnaRuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,16 +36,16 @@ public class UnderbiddingServlet extends HttpServlet {
 		List<AnrexProduct> products = null;
 		AnrexProductService anrexProductService = new AnrexProductService();
 		products = anrexProductService.getAllAnrexProducts();
+		String article = (String) request.getParameter("anrex-product");
+		String url = (String) request.getParameter("belsosnaRuUrl");
 		
-		
-//		String urlP = request.getRequestURL().toString();
-		String urlP = request.getContextPath();
-		
-		
+		BelsosnaRu belsosnaRu = new BelsosnaRu();
+		belsosnaRu.saveProduct(url, article);
 		
 		HttpSession session = request.getSession();
+		
+		session.setAttribute("AartNum", article);
 		session.setAttribute("products", products);
-		session.setAttribute("urlP", urlP);
 		getServletContext().getRequestDispatcher("/admin.jsp").forward(request, response);
 	}
 

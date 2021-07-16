@@ -72,4 +72,14 @@
     <servlet-name>MebellinerRuServlet</servlet-name>
     <url-pattern>/MebellinerRu</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BelsosnaRuServlet</display-name>
+    <servlet-name>BelsosnaRuServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.BelsosnaRuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BelsosnaRuServlet</servlet-name>
+    <url-pattern>/BelsosnaRu</url-pattern>
+  </servlet-mapping>
 </web-app>

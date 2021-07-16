@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,15 +16,22 @@
 <body>
 
 
+
 <div class="container-sm" style="margin-top: 100px">
 	<h1>Information</h1>
 
-	<a href="http://localhost:8080/ru.underbidding/">Back</a>
+	<a href="index.jsp">Back</a>
 	<br>
 	<hr>
-	<a href="information?date=smebel.su" class="btn btn-success"> smebel.su </a>
+
+	<a href="information?date=smebel.su" class="btn btn-success">smebel.su</a>
 	<a href="information?date=ekat-mebel.ru" class="btn btn-success"> ekat-mebel.ru </a>
 	<a href="information?date=mebelliner.ru" class="btn btn-success"> mebelliner.ru </a>
+	<a href="information?date=belsosna.ru" class="btn btn-success"> belsosna.ru </a>
+
+
+<br>
+
 
 	<br style="background: red">
 	<hr>

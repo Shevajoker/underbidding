@@ -60,10 +60,12 @@ public class InformationServlet extends HttpServlet {
 			}
 		}
 		
+		String urlP = request.getContextPath();
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("listShowTables", listShowTables);
 		session.setAttribute("data", data);
+		session.setAttribute("urlP", urlP);
 		}
 		
 		

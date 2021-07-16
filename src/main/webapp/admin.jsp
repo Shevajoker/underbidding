@@ -17,8 +17,12 @@
 	<div class="container-sm" style="margin-top: 100px">
 
 		<h1>Hi Admin!</h1>
+		<h2>${urlP}</h2>
+		<p>
+		<% out.println(request.getRequestURL()); %>
+		</p>
 
-		<br> <a href="http://localhost:8080/ru.underbidding/">Back</a> <br>
+		<br> <a href="index.jsp">Back</a> <br>
 		<hr>
 
 
@@ -31,7 +35,8 @@
 		</form>
 		<p style="color: green;">${message }</p>
 		<br>
-		
+		<hr>
+		<br>
 		<h2>smebel.su</h2>
 		<form id="form-smebel" action="SmebelSu" method="post">
 			<label class="form-label">Product from anrex.info</label>
@@ -46,9 +51,10 @@
 			<input type="submit" class="btn btn-success">
 		</form>
 		
-		
-
 		<br>
+		<hr>
+		<br>
+	
 		<h2>ekat-mebel.ru</h2>
 		<form id="form-ekat-mebel-ru" action="EkatMebelRu" method="post">
 			<label class="form-label">Product from anrex.info</label>
@@ -65,7 +71,8 @@
 				<br>
 				<input type="submit" class="btn btn-success">
 		</form>
-		
+		<br>
+		<hr>
 
 		<br>
 		<h2>mebelliner.ru</h2>
@@ -84,13 +91,38 @@
 				<br>
 				<input type="submit" class="btn btn-success">
 		</form>
-		
-
+	
+	
+	<br>
+	<hr>
+	<br>
+	
+	<h2>belsosna.ru</h2>
+		<form id="form-belsosnaru" action="BelsosnaRu" method="post">
+			<label class="form-label">Product from anrex.info</label>
+			<br>
+			<select	form="form-belsosnaru" name="anrex-product" class="form-control">
+				<c:forEach items="${products}" var="product">
+					<option value="${product.article }">${product.name}</option>
+				</c:forEach>
+			</select>
+			<br>
+			<label class="form-label">Add product from belsosna.ru</label>
+			<br>
+			<input type="text" placeholder="Enter URL" name="belsosnaRuUrl" size="100"	required="required" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-success">
+		</form>
+	
+	
+	
+	
+</div>	
 	<div class="container footer" style="height: 300px">
 	
 	</div>
 	
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
 </html>

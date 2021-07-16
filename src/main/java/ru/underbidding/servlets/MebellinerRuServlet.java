@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ru.underbidding.main.EkatMebelRu;
 import ru.underbidding.main.MebellinerRu;
 import ru.underbidding.model.AnrexProduct;
 import ru.underbidding.service.AnrexProductService;
