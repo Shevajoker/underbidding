@@ -114,7 +114,47 @@
 				<input type="submit" class="btn btn-success">
 		</form>
 	
+	<br>
+	<hr>
+	<br>
+	<h2>mebelluxe.com</h2>
+		<form id="form-mebelluxeCom" action="MebelluxeCom" method="post">
+			<label class="form-label">Product from anrex.info</label>
+			<br>
+			<select	form="form-mebelluxeCom" name="anrex-product" class="form-control">
+				<c:forEach items="${products}" var="product">
+					<option value="${product.article }">${product.name}</option>
+				</c:forEach>
+			</select>
+			<br>
+			<label class="form-label">Add product from mebelluxe.com</label>
+			<br>
+			<input type="text" placeholder="Enter URL" name="mebelluxeComUrl" size="100"	required="required" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-success">
+		</form>
 	
+	
+	
+	<br>
+	<hr>
+	<br>
+	<h2>techshop.ru</h2>
+		<form id="form-techshopRu" action="TechshopRu" method="post">
+			<label class="form-label">Product from anrex.info</label>
+			<br>
+			<select	form="form-techshopRu" name="anrex-product" class="form-control">
+				<c:forEach items="${products}" var="product">
+					<option value="${product.article }">${product.name}</option>
+				</c:forEach>
+			</select>
+			<br>
+			<label class="form-label">Add product from techshop.ru</label>
+			<br>
+			<input type="text" placeholder="Enter URL" name="techshopRuUrl" size="100"	required="required" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-success">
+		</form>
 	
 	
 </div>	

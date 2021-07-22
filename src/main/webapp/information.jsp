@@ -28,7 +28,8 @@
 	<a href="information?date=ekat-mebel.ru" class="btn btn-success"> ekat-mebel.ru </a>
 	<a href="information?date=mebelliner.ru" class="btn btn-success"> mebelliner.ru </a>
 	<a href="information?date=belsosna.ru" class="btn btn-success"> belsosna.ru </a>
-
+	<a href="information?date=mebelluxe.com" class="btn btn-success"> mebelluxe.com </a>
+	<a href="information?date=techshop.ru" class="btn btn-success"> techshop.ru </a>
 
 <br>
 

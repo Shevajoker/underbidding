@@ -82,4 +82,24 @@
     <servlet-name>BelsosnaRuServlet</servlet-name>
     <url-pattern>/BelsosnaRu</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MebelluxeComServlet</display-name>
+    <servlet-name>MebelluxeComServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.MebelluxeComServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MebelluxeComServlet</servlet-name>
+    <url-pattern>/MebelluxeCom</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TechshopRuServlet</display-name>
+    <servlet-name>TechshopRuServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.TechshopRuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TechshopRuServlet</servlet-name>
+    <url-pattern>/TechshopRu</url-pattern>
+  </servlet-mapping>
 </web-app>

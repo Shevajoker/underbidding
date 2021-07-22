@@ -28,20 +28,20 @@ public class TestClass {
 		int priceActual;
 		int priceOld;
 		
-		String url = "https://belsosna.ru/catalog/shkafy_uglovye/shkaf-uglovoy-2d-magellan/";
+		String url = "https://techshop.ru/product/anrex-oskar-1dm-dub-sanremo/";
 		
 
 		Document doc = Jsoup.connect(url)
 				.userAgent("Chrome/4.0.249.0 Safari/532.5")
-				.referrer("https://belsosna.ru")
+				.referrer("https://mebelluxe.com")
 				.get();
 
-		Elements data = doc.select(".PROPERTY_ARTNUMBER").select("td");
+		Elements data = doc.select(".element-code");
 		
-		article = data.get(1).text();
-		article = "belsosna";
-		
+		article = data.get(0).text();
+//		article = "techshop.ru";
 		System.out.println(article);
+		
 		
 		
 		data = doc.select("h1");
@@ -51,21 +51,23 @@ public class TestClass {
 		
 		
 		
-		data = doc.select(".pip__price");
+		data = doc.select(".price");
 		String st = data.get(0).text();
 		st = st.replaceAll("\\s+", "");
-//		st = st.substring(0, st.length()-8).trim();
+//		st = st.replaceAll("\\s+", "");
+		st = st.substring(5, st.length()-4).trim();
 		priceActual = Integer.parseInt(st);
-		System.out.println(priceActual);
+		System.out.println(st);
 
 //		
 		try {
 
-			data = doc.select(".pip-oldprice__value");
+			data = doc.select(".goods-old-price");
 			st = data.get(0).text().replaceAll("\\s+", "");
 //			st = data.get(0).text();
-//			st = st.substring(0, st.length()-8).trim();
+			st = st.substring(0, st.length()-4).trim();
 			priceOld = Integer.parseInt(st);
+			System.out.println(st);
 
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("No Sale!");

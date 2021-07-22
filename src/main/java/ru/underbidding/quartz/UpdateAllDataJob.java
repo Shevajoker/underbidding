@@ -8,9 +8,12 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 import ru.underbidding.main.AnrexInfo;
+import ru.underbidding.main.BelsosnaRu;
 import ru.underbidding.main.EkatMebelRu;
 import ru.underbidding.main.MebellinerRu;
+import ru.underbidding.main.MebelluxeCom;
 import ru.underbidding.main.SmebelSu;
+import ru.underbidding.main.TechshopRu;
 import ru.underbidding.model.AnrexProduct;
 import ru.underbidding.model.OtherProduct;
 import ru.underbidding.service.AnrexProductService;
@@ -59,6 +62,26 @@ public class UpdateAllDataJob implements Job{
 		for (OtherProduct listProducts : listOtherProducts) {
 			mebellinerRu.updateProduct(listProducts);
 		}
+		
+		listOtherProducts = otherProductService.getOtherProductsBySiteName("belsosna.ru");
+		BelsosnaRu belsosnaRu = new BelsosnaRu();
+		for (OtherProduct listProducts : listOtherProducts) {
+			belsosnaRu.updateProduct(listProducts);
+		}
+		
+		listOtherProducts = otherProductService.getOtherProductsBySiteName("mebelluxe.com");
+		MebelluxeCom mebelluxeCom = new MebelluxeCom();
+		for (OtherProduct listProducts : listOtherProducts) {
+			mebelluxeCom.updateProduct(listProducts);
+		}
+		
+		listOtherProducts = otherProductService.getOtherProductsBySiteName("techshop.ru");
+		TechshopRu techshopRu = new TechshopRu();
+		for (OtherProduct listProducts : listOtherProducts) {
+			techshopRu.updateProduct(listProducts);
+		}
+		
+		
 		
 		System.out.println("UpdateAllDataJob");
 		
