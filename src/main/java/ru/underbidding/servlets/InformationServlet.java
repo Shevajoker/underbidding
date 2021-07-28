@@ -38,7 +38,7 @@ public class InformationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
-		String data = request.getParameter("date");
+		String data = request.getParameter("data");
 		System.out.println(data);
 		if (data!=null) {
 		List<AnrexProduct> listAnrexProduct = null;

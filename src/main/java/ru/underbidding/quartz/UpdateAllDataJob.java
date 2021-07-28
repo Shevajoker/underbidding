@@ -10,6 +10,7 @@ import org.quartz.JobExecutionException;
 import ru.underbidding.main.AnrexInfo;
 import ru.underbidding.main.BelsosnaRu;
 import ru.underbidding.main.EkatMebelRu;
+import ru.underbidding.main.MargomebelMskRu;
 import ru.underbidding.main.MebellinerRu;
 import ru.underbidding.main.MebelluxeCom;
 import ru.underbidding.main.SmebelSu;
@@ -81,6 +82,11 @@ public class UpdateAllDataJob implements Job{
 			techshopRu.updateProduct(listProducts);
 		}
 		
+		listOtherProducts = otherProductService.getOtherProductsBySiteName("margomebel-msk.ru");
+		MargomebelMskRu margomebelMskRu = new MargomebelMskRu();
+		for (OtherProduct listProducts : listOtherProducts) {
+			margomebelMskRu.updateProduct(listProducts);
+		}
 		
 		
 		System.out.println("UpdateAllDataJob");

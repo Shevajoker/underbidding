@@ -28,7 +28,7 @@ public class TestClass {
 		int priceActual;
 		int priceOld;
 		
-		String url = "https://techshop.ru/product/anrex-oskar-1dm-dub-sanremo/";
+		String url = "http://margomebel-msk.ru/catalog/dlya_doma_1/stellazh_diesel_h150/";
 		
 
 		Document doc = Jsoup.connect(url)
@@ -36,7 +36,7 @@ public class TestClass {
 				.referrer("https://mebelluxe.com")
 				.get();
 
-		Elements data = doc.select(".element-code");
+		Elements data = doc.select(".manufacture-logo");
 		
 		article = data.get(0).text();
 //		article = "techshop.ru";
@@ -44,7 +44,7 @@ public class TestClass {
 		
 		
 		
-		data = doc.select("h1");
+		data = doc.select(".name");
 		name = data.get(0).text();
 		System.out.println(name);
 		
@@ -55,18 +55,19 @@ public class TestClass {
 		String st = data.get(0).text();
 		st = st.replaceAll("\\s+", "");
 //		st = st.replaceAll("\\s+", "");
-		st = st.substring(5, st.length()-4).trim();
+		st = st.substring(0, st.length()-1).trim();
 		priceActual = Integer.parseInt(st);
 		System.out.println(st);
 
 //		
 		try {
 
-			data = doc.select(".goods-old-price");
-			st = data.get(0).text().replaceAll("\\s+", "");
+//			data = doc.select(".goods-old-price");
+//			st = data.get(0).text().replaceAll("\\s+", "");
 //			st = data.get(0).text();
-			st = st.substring(0, st.length()-4).trim();
-			priceOld = Integer.parseInt(st);
+//			st = st.substring(0, st.length()-4).trim();
+//			priceOld = Integer.parseInt(st);
+			priceOld = 0;
 			System.out.println(st);
 
 		} catch (IndexOutOfBoundsException e) {

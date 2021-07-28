@@ -102,4 +102,14 @@
     <servlet-name>TechshopRuServlet</servlet-name>
     <url-pattern>/TechshopRu</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MargomebelMskRuServlet</display-name>
+    <servlet-name>MargomebelMskRuServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.MargomebelMskRuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MargomebelMskRuServlet</servlet-name>
+    <url-pattern>/MargomebelMskRu</url-pattern>
+  </servlet-mapping>
 </web-app>

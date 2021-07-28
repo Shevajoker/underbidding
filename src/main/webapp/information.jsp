@@ -24,12 +24,13 @@
 	<br>
 	<hr>
 
-	<a href="information?date=smebel.su" class="btn btn-success">smebel.su</a>
-	<a href="information?date=ekat-mebel.ru" class="btn btn-success"> ekat-mebel.ru </a>
-	<a href="information?date=mebelliner.ru" class="btn btn-success"> mebelliner.ru </a>
-	<a href="information?date=belsosna.ru" class="btn btn-success"> belsosna.ru </a>
-	<a href="information?date=mebelluxe.com" class="btn btn-success"> mebelluxe.com </a>
-	<a href="information?date=techshop.ru" class="btn btn-success"> techshop.ru </a>
+	<a href="information?data=smebel.su" class="btn btn-success">smebel.su</a>
+	<a href="information?data=ekat-mebel.ru" class="btn btn-success"> ekat-mebel.ru </a>
+	<a href="information?data=mebelliner.ru" class="btn btn-success"> mebelliner.ru </a>
+	<a href="information?data=belsosna.ru" class="btn btn-success"> belsosna.ru </a>
+	<a href="information?data=mebelluxe.com" class="btn btn-success"> mebelluxe.com </a>
+	<a href="information?data=techshop.ru" class="btn btn-success"> techshop.ru </a>
+	<a href="information?data=margomebel-msk.ru" class="btn btn-success"> margomebel-msk.ru </a>
 
 <br>
 

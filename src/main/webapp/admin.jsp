@@ -17,11 +17,11 @@
 	<div class="container-sm" style="margin-top: 100px">
 
 		<h1>Hi Admin!</h1>
-		<h2>${urlP}</h2>
+	<!--	<h2>${urlP}</h2>
 		<p>
-		<% out.println(request.getRequestURL()); %>
+		<% //out.println(request.getRequestURL()); %>
 		</p>
-
+-->
 		<br> <a href="index.jsp">Back</a> <br>
 		<hr>
 
@@ -152,6 +152,28 @@
 			<label class="form-label">Add product from techshop.ru</label>
 			<br>
 			<input type="text" placeholder="Enter URL" name="techshopRuUrl" size="100"	required="required" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-success">
+		</form>
+		
+		
+		
+		<br>
+	<hr>
+	<br>
+	<h2>margomebel-msk.ru</h2>
+		<form id="form-margomebel-mskRu" action="MargomebelMskRu" method="post">
+			<label class="form-label">Product from anrex.info</label>
+			<br>
+			<select	form="form-margomebel-mskRu" name="anrex-product" class="form-control">
+				<c:forEach items="${products}" var="product">
+					<option value="${product.article }">${product.name}</option>
+				</c:forEach>
+			</select>
+			<br>
+			<label class="form-label">Add product from margomebel-msk.ru</label>
+			<br>
+			<input type="text" placeholder="Enter URL" name="margomebelMskRuUrl" size="100"	required="required" class="form-control">
 				<br>
 				<input type="submit" class="btn btn-success">
 		</form>
