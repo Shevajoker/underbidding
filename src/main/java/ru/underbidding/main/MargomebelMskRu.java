@@ -47,7 +47,7 @@ public class MargomebelMskRu implements ParserPage{
 		try {
 			doc = Jsoup.connect(url)
 					.userAgent("Chrome/4.0.249.0 Safari/532.5")
-					.referrer("https://mebelluxe.com")
+					.referrer("http://margomebel-msk.ru")
 					.get();
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -70,7 +70,6 @@ public class MargomebelMskRu implements ParserPage{
 		
 		try {
 			priceOld = 0;
-			System.out.println(st);
 
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("No Sale!");

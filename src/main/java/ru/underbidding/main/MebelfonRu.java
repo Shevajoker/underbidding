@@ -9,66 +9,65 @@ import org.jsoup.select.Elements;
 import ru.underbidding.model.OtherProduct;
 import ru.underbidding.service.OtherProductService;
 
-public class EkatMebelRu implements ParserPage {
+public class MebelfonRu implements ParserPage {
+	private String siteName = "mebelfon.ru";
 
 	public void saveProduct(String url, String anrexArticle) {
-
 		OtherProduct otherProduct = new OtherProduct();
-		EkatMebelRu ekatMebelRu = new EkatMebelRu();
+		MebelfonRu mebelfonRu = new MebelfonRu();
 		otherProduct.setUrl(url);
 		otherProduct.setAnrexArticle(anrexArticle);
-		otherProduct.setSateName("ekat-mebel.ru");
+		otherProduct.setSateName(siteName);
 
 		OtherProductService otherProductService = new OtherProductService();
 
 		if (otherProductService.checkAnrexProductExist(otherProduct)) {
 			otherProduct = otherProductService.getOtherProductByAnrexArticle(anrexArticle, otherProduct.getSateName());
 			otherProduct.setUrl(url);
-			otherProduct = ekatMebelRu.parseSitePage(otherProduct);
+			otherProduct = mebelfonRu.parseSitePage(otherProduct);
 			otherProductService.updateOtherProduct(otherProduct);
 		} else {
-			otherProduct = ekatMebelRu.parseSitePage(otherProduct);
+			otherProduct = mebelfonRu.parseSitePage(otherProduct);
 			otherProductService.saveOtherProduct(otherProduct);
 		}
 
 	}
 
 	public OtherProduct parseSitePage(OtherProduct product) {
+
 		String article;
 		String name;
 		int priceActual;
 		int priceOld;
-
 		String url = product.getUrl();
 
 		Document doc = null;
 		try {
-			doc = Jsoup.connect(url)
-					.userAgent("Chrome/4.0.249.0 Safari/532.5")
-					.referrer("http://ekat-mebel.ru")
-					.get();
+			doc = Jsoup.connect(url).userAgent("Chrome/4.0.249.0 Safari/532.5").referrer("https://mebelfon.ru").get();
 		} catch (IOException e1) {
-			System.out.println("--Ecxeption-- parseSitePage - URL - ERROR - Jsoup.connect --");
-			System.out.println(e1.getMessage());
 			e1.printStackTrace();
 		}
 
-		Elements data = doc.select("h1");
-		article = data.get(0).text();
-		System.out.println(data.get(0).text());
+		Elements data = doc.select("#pagetitle");
 
-		data = doc.select("h1");
+//		article = data.get(0).text();
+		article = "mebelfon.ru";
+
+		data = doc.select("#pagetitle");
 		name = data.get(0).text();
 
-		data = doc.select("strong");
-		String st = data.get(3).text();
-		st = st.substring(0, st.length() - 4).trim();
+		data = doc.select(".product-item-detail-price-current");
+		String st = data.get(0).text();
+		st = st.replaceAll("\\s+", "");
+		st = st.substring(0, st.length() - 1).trim();
 		priceActual = Integer.parseInt(st);
 
 		try {
 
-			data = doc.select(".p-price-block").select(".price-old");
+			data = doc.select(".product-item-detail-price-old");
 			st = data.get(0).text().replaceAll("\\s+", "");
+			st = data.get(0).text();
+			st = st.substring(0, st.length() - 4).trim();
 			priceOld = Integer.parseInt(st);
 
 		} catch (IndexOutOfBoundsException e) {
@@ -76,20 +75,21 @@ public class EkatMebelRu implements ParserPage {
 			System.out.println(e.getMessage());
 			priceOld = 0;
 		}
+
 		product.setArticle(article);
 		product.setName(name);
 		product.setPriceActual(priceActual);
 		product.setPriceOld(priceOld);
-		product.setSateName("ekat-mebel.ru");
-
+		product.setSateName(siteName);
 		return product;
 	}
 
 	public void updateProduct(OtherProduct product) {
-		EkatMebelRu ekatMebelRu = new EkatMebelRu();
+		MebelfonRu mebelfonRu = new MebelfonRu();
 		OtherProductService otherProductService = new OtherProductService();
-		product = ekatMebelRu.parseSitePage(product);
+		product = mebelfonRu.parseSitePage(product);
 		otherProductService.updateOtherProduct(product);
+
 	}
 
 }

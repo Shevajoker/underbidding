@@ -112,4 +112,24 @@
     <servlet-name>MargomebelMskRuServlet</servlet-name>
     <url-pattern>/MargomebelMskRu</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MebelfonRuServlet</display-name>
+    <servlet-name>MebelfonRuServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.MebelfonRuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MebelfonRuServlet</servlet-name>
+    <url-pattern>/MebelfonRu</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PlanetaKomfortaComServlet</display-name>
+    <servlet-name>PlanetaKomfortaComServlet</servlet-name>
+    <servlet-class>ru.underbidding.servlets.PlanetaKomfortaComServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PlanetaKomfortaComServlet</servlet-name>
+    <url-pattern>/PlanetaKomfortaCom</url-pattern>
+  </servlet-mapping>
 </web-app>

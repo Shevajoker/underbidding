@@ -46,7 +46,7 @@ public class TechshopRu implements ParserPage{
 		try {
 			doc = Jsoup.connect(url)
 					.userAgent("Chrome/4.0.249.0 Safari/532.5")
-					.referrer("https://mebelluxe.com")
+					.referrer("https://techshop.ru")
 					.get();
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block

@@ -75,7 +75,6 @@ public class SmebelSu {
 		otherProduct.setPriceActual(priceActual);
 		otherProduct.setPriceOld(priceOld);
 		otherProduct.setSateName("smebel.su");
-		System.out.println(otherProduct.toString());
 		return otherProduct;
 		
 	}

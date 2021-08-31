@@ -31,6 +31,8 @@
 	<a href="information?data=mebelluxe.com" class="btn btn-success"> mebelluxe.com </a>
 	<a href="information?data=techshop.ru" class="btn btn-success"> techshop.ru </a>
 	<a href="information?data=margomebel-msk.ru" class="btn btn-success"> margomebel-msk.ru </a>
+	<a href="information?data=mebelfon.ru" class="btn btn-success"> mebelfon.ru </a>
+	<a href="information?data=planeta-komforta.com" class="btn btn-success"> planeta-komforta.com </a>
 
 <br>
 

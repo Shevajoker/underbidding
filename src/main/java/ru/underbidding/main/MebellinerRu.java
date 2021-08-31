@@ -61,7 +61,6 @@ public class MebellinerRu implements ParserPage {
 		String st = data.get(0).text();
 		st = st.substring(0, st.length() - 8).trim();
 		priceActual = Integer.parseInt(st);
-		System.out.println(priceActual);
 
 	
 		try {

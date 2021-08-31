@@ -179,6 +179,50 @@
 		</form>
 	
 	
+	
+	<br>
+	<hr>
+	<br>
+	<h2>mebelfon.ru</h2>
+		<form id="form-mebelfon.ru" action="MebelfonRu" method="post">
+			<label class="form-label">Product from anrex.info</label>
+			<br>
+			<select	form="form-mebelfon.ru" name="anrex-product" class="form-control">
+				<c:forEach items="${products}" var="product">
+					<option value="${product.article }">${product.name}</option>
+				</c:forEach>
+			</select>
+			<br>
+			<label class="form-label">Add product from mebelfon.ru</label>
+			<br>
+			<input type="text" placeholder="Enter URL" name="mebelfonRuUrl" size="100"	required="required" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-success">
+		</form>
+	
+	
+	
+	<br>
+	<hr>
+	<br>
+	<h2>planeta-komforta.com</h2>
+		<form id="form-planeta-komforta.com" action="PlanetaKomfortaCom" method="post">
+			<label class="form-label">Product from anrex.info</label>
+			<br>
+			<select	form="form-planeta-komforta.com" name="anrex-product" class="form-control">
+				<c:forEach items="${products}" var="product">
+					<option value="${product.article }">${product.name}</option>
+				</c:forEach>
+			</select>
+			<br>
+			<label class="form-label">Add product from planeta-komforta.com</label>
+			<br>
+			<input type="text" placeholder="Enter URL" name="planetaKomfortaComUrl" size="100"	required="required" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-success">
+		</form>
+	
+	
 </div>	
 	<div class="container footer" style="height: 300px">
 	

@@ -11,6 +11,7 @@ import ru.underbidding.main.AnrexInfo;
 import ru.underbidding.main.BelsosnaRu;
 import ru.underbidding.main.EkatMebelRu;
 import ru.underbidding.main.MargomebelMskRu;
+import ru.underbidding.main.MebelfonRu;
 import ru.underbidding.main.MebellinerRu;
 import ru.underbidding.main.MebelluxeCom;
 import ru.underbidding.main.SmebelSu;
@@ -42,6 +43,7 @@ public class UpdateAllDataJob implements Job{
 				System.out.println(e.getMessage());
 				e.printStackTrace();
 			}
+			System.out.println("UPDATE - " + product.toString());
 		}
 		
 		for (OtherProduct smebelSuProduct : listSmebelSu) {
@@ -52,40 +54,54 @@ public class UpdateAllDataJob implements Job{
 				System.out.println(e.getMessage());
 				e.printStackTrace();
 			}
+			System.out.println("UPDATE - " + smebelSuProduct.toString());
 		}
 		
 		for (OtherProduct listProducts : listOtherProducts) {
 			ekatMebelRu.updateProduct(listProducts);
+			System.out.println("UPDATE - " + listProducts.toString());
 		}
 		
 		listOtherProducts = otherProductService.getOtherProductsBySiteName("mebelliner.ru");
 		MebellinerRu mebellinerRu = new MebellinerRu();
 		for (OtherProduct listProducts : listOtherProducts) {
 			mebellinerRu.updateProduct(listProducts);
+			System.out.println("UPDATE - " + listProducts.toString());
 		}
 		
 		listOtherProducts = otherProductService.getOtherProductsBySiteName("belsosna.ru");
 		BelsosnaRu belsosnaRu = new BelsosnaRu();
 		for (OtherProduct listProducts : listOtherProducts) {
 			belsosnaRu.updateProduct(listProducts);
+			System.out.println("UPDATE - " + listProducts.toString());
 		}
 		
 		listOtherProducts = otherProductService.getOtherProductsBySiteName("mebelluxe.com");
 		MebelluxeCom mebelluxeCom = new MebelluxeCom();
 		for (OtherProduct listProducts : listOtherProducts) {
 			mebelluxeCom.updateProduct(listProducts);
+			System.out.println("UPDATE - " + listProducts.toString());
 		}
 		
 		listOtherProducts = otherProductService.getOtherProductsBySiteName("techshop.ru");
 		TechshopRu techshopRu = new TechshopRu();
 		for (OtherProduct listProducts : listOtherProducts) {
 			techshopRu.updateProduct(listProducts);
+			System.out.println("UPDATE - " + listProducts.toString());
 		}
 		
 		listOtherProducts = otherProductService.getOtherProductsBySiteName("margomebel-msk.ru");
 		MargomebelMskRu margomebelMskRu = new MargomebelMskRu();
 		for (OtherProduct listProducts : listOtherProducts) {
 			margomebelMskRu.updateProduct(listProducts);
+			System.out.println("UPDATE - " + listProducts.toString());
+		}
+		
+		listOtherProducts = otherProductService.getOtherProductsBySiteName("mebelfon.ru");
+		MebelfonRu mebelfonRu = new MebelfonRu();
+		for (OtherProduct listProducts : listOtherProducts) {
+			mebelfonRu.updateProduct(listProducts);
+			System.out.println("UPDATE - " + listProducts.toString());
 		}
 		
 		
