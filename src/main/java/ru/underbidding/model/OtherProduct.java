@@ -13,9 +13,13 @@ import javax.persistence.Table;
 public class OtherProduct {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
 	
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "article")
 	private String article;
 	
 	@Column(name = "price_actual")
@@ -23,7 +27,10 @@ public class OtherProduct {
 	
 	@Column(name = "price_old")
 	private int priceOld;
+	
+	@Column(name = "url")
 	private String url;
+	
 	@Column(name = "anrex_article")
 	private String anrexArticle; 
 	

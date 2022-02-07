@@ -15,8 +15,10 @@ public class AnrexProduct {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
 	
+	@Column(name = "name")
 	private String name;
 	
 	@Column(name = "anrex_article")
@@ -28,6 +30,7 @@ public class AnrexProduct {
 	@Column(name = "price_old")
 	private int priceOld;
 	
+	@Column(name = "url")
 	private String url;
 
 
